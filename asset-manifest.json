@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/throughmylens/static/css/main.a9d7aa47.css",
+    "main.js": "/throughmylens/static/js/main.b61e1b55.js",
+    "index.html": "/throughmylens/index.html",
+    "main.a9d7aa47.css.map": "/throughmylens/static/css/main.a9d7aa47.css.map",
+    "main.b61e1b55.js.map": "/throughmylens/static/js/main.b61e1b55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9d7aa47.css",
+    "static/js/main.b61e1b55.js"
+  ]
+}
