@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap");
+
+:root {
+  --page-bg: #ededf0;
+  --frame-bg: #ffffff;
+  --frame-border: #6d6d6d;
+  --section-bg: #dddde0;
+  --primary-blue: #072a83;
+  --link-blue: #1a43a2;
+  --accent-amber: #dca84f;
+  --filter-bg: #ecebf2;
+  --filter-border: #c8c8d1;
+  --text: #121212;
+  --footer-text: #767676;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --font-body: "Manrope", "Helvetica Neue", Helvetica, sans-serif;
+  --font-heading: "Lora", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.page-frame {
+  width: 100%;
+  margin: 0;
+  border-top: 1px solid var(--frame-border);
+  border-bottom: 1px solid var(--frame-border);
+  background: var(--frame-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1;
+}
