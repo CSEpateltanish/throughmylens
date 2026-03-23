@@ -10,7 +10,6 @@ function Navbar(props) {
         <img className="camera-icon" src={IMG_BASE + "icons/camera_icon.jpeg"} alt="Camera icon" />
         <h1 className="brand-title">Through My Lens <span>| Tanish Patel</span></h1>
       </div>
-      <button className="nav-toggle" type="button">Menu</button>
       <div className="main-nav">
         <a href="#home" className={props.currentPage === 'home' ? 'current-link' : ''} onClick={() => props.goTo('home')}>Home</a>
         <a href="#portfolio" className={props.currentPage === 'portfolio' ? 'current-link' : ''} onClick={() => props.goTo('portfolio')}>Portfolio</a>

@@ -56,21 +56,6 @@
   text-decoration-color: var(--accent-amber);
 }
 
-.nav-toggle {
-  display: none;
-  border: 1px solid #c8d1e4;
-  border-radius: 8px;
-  background: #ffffff;
-  color: var(--primary-blue);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 8px 14px;
-  cursor: pointer;
-}
-
-.nav-toggle:hover {
-  background: #f2f5fb;
-}
 
 @media (max-width: 1300px) {
   .brand-title {
@@ -86,9 +71,8 @@
 
 @media (max-width: 900px) {
   .topbar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 14px;
     padding: 22px;
   }
@@ -98,16 +82,12 @@
   .brand-title span {
     font-size: 22px;
   }
-  .nav-toggle {
-    display: inline-block;
-  }
   .main-nav {
-    display: none;
-    grid-column: 1 / -1;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
-    padding-top: 8px;
+    width: 100%;
   }
   .main-nav a {
     font-size: 18px;
@@ -127,10 +107,6 @@
   }
   .brand-title span {
     font-size: 17px;
-  }
-  .nav-toggle {
-    font-size: 14px;
-    padding: 7px 12px;
   }
   .main-nav a {
     font-size: 15px;
