@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/throughmylens/static/css/main.39b1fe8c.css",
-    "main.js": "/throughmylens/static/js/main.d44fdd56.js",
+    "main.css": "/throughmylens/static/css/main.9ca31625.css",
+    "main.js": "/throughmylens/static/js/main.254138a4.js",
     "index.html": "/throughmylens/index.html",
-    "main.39b1fe8c.css.map": "/throughmylens/static/css/main.39b1fe8c.css.map",
-    "main.d44fdd56.js.map": "/throughmylens/static/js/main.d44fdd56.js.map"
+    "main.9ca31625.css.map": "/throughmylens/static/css/main.9ca31625.css.map",
+    "main.254138a4.js.map": "/throughmylens/static/js/main.254138a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.39b1fe8c.css",
-    "static/js/main.d44fdd56.js"
+    "static/css/main.9ca31625.css",
+    "static/js/main.254138a4.js"
   ]
 }
