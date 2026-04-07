@@ -55,7 +55,7 @@ function Contact() {
       <section className="contact-layout">
         <section className="contact-panel">
           <h2>Contact Me</h2>
-          <p>If you would like to book a session, collaborate, or ask a question, reach out using the form or direct contact details below.</p>
+          <p>If you would like to book a session, collaborate, or ask a question, reach out using the form or contact details below.</p>
           <div className="contact-list">
             <p className="contact-list-item">
               <img className="contact-icon" src={IMG_BASE + "icons/mail_icon.jpeg"} alt="Email icon" />
