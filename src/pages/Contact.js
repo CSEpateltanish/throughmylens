@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-var IMG_BASE = "https://raw.githubusercontent.com/CSEpateltanish/CSEpateltanish.github.io/e086ee4f0dc148596f488b2acc6944f351c89780/csce242/projects/part7/images/";
+var IMG_BASE = "https://csepateltanish.github.io/csce242/projects/part7/images/";
+var SEND_URL = "https://formsubmit.co/ajax/tpatel4237@gmail.com";
 
 function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState('');
-  const [statusType, setStatusType] = useState('');
-  const [submitting, setSubmitting] = useState(false);
+  var [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  var [status, setStatus] = useState('');
+  var [statusType, setStatusType] = useState('');
+  var [submitting, setSubmitting] = useState(false);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,28 +17,34 @@ function Contact() {
   function handleSubmit(e) {
     e.preventDefault();
     setSubmitting(true);
-    setStatus('Sending...');
+    setStatus('sending...');
     setStatusType('is-loading');
 
-    fetch('https://formspree.io/f/xpwzjlzn', {
+    var info = new FormData();
+    info.append('name', form.name);
+    info.append('email', form.email);
+    info.append('subject', form.subject);
+    info.append('message', form.message);
+    info.append('_subject', 'contact form message');
+    info.append('_captcha', 'false');
+
+    fetch(SEND_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name: form.name, email: form.email, subject: form.subject, message: form.message })
+      headers: { Accept: 'application/json' },
+      body: info
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.ok) {
-          setStatus("Message sent! I'll get back to you soon.");
-          setStatusType('is-success');
-          setForm({ name: '', email: '', subject: '', message: '' });
-        } else {
-          setStatus('Something went wrong. Please try again.');
-          setStatusType('is-error');
-        }
+      .then(function(res) {
+        if (!res.ok) { throw new Error('send failed'); }
+        return res.json();
+      })
+      .then(function() {
+        setForm({ name: '', email: '', subject: '', message: '' });
+        setStatus('message sent');
+        setStatusType('is-success');
         setSubmitting(false);
       })
-      .catch(() => {
-        setStatus('Something went wrong. Please try again.');
+      .catch(function() {
+        setStatus('error sending message');
         setStatusType('is-error');
         setSubmitting(false);
       });
@@ -48,7 +55,7 @@ function Contact() {
       <section className="contact-layout">
         <section className="contact-panel">
           <h2>Contact Me</h2>
-          <p>If you would like to book a session, collaborate, or ask a question, reach out using the contact details below.</p>
+          <p>If you would like to book a session, collaborate, or ask a question, reach out using the form or direct contact details below.</p>
           <div className="contact-list">
             <p className="contact-list-item">
               <img className="contact-icon" src={IMG_BASE + "icons/mail_icon.jpeg"} alt="Email icon" />
@@ -62,40 +69,41 @@ function Contact() {
         </section>
 
         <section className="contact-panel">
-          <h2>Send a Message</h2>
+          <h2>Book With Me</h2>
+          <p>Send a request and I will reply as soon as possible!</p>
           <form className="contact-form" onSubmit={handleSubmit}>
-            <label>
-              Name
-              <input type="text" name="name" value={form.name} onChange={handleChange} minLength="2" required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" value={form.email} onChange={handleChange} required />
-            </label>
-            <label>
-              Subject
-              <input type="text" name="subject" value={form.subject} onChange={handleChange} minLength="3" required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" value={form.message} onChange={handleChange} minLength="20" required />
-            </label>
-            <button type="submit" disabled={submitting}>Send Message</button>
-            <p className={`contact-form-status ${statusType}`}>{status}</p>
+            <label htmlFor="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" placeholder="Your name" value={form.name} onChange={handleChange} required minLength="2" />
+
+            <label htmlFor="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="you@example.com" value={form.email} onChange={handleChange} required />
+
+            <label htmlFor="contact-subject">Subject</label>
+            <input id="contact-subject" type="text" name="subject" placeholder="Session type" value={form.subject} onChange={handleChange} required minLength="3" />
+
+            <label htmlFor="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Tell me about your project" value={form.message} onChange={handleChange} required minLength="20" />
+
+            <button id="contact-submit" type="submit" disabled={submitting}>Submit</button>
+            <p className={"contact-form-status " + statusType}>{status}</p>
           </form>
         </section>
       </section>
 
       <section className="contact-iframe-layout">
-        <div className="iframe-panel">
+        <section className="contact-panel iframe-panel">
+          <h2>Service Area Map</h2>
+          <p>Sessions are available across Greenville and most South Carolina locations.</p>
           <div className="iframe-shell">
             <iframe
               src="https://www.google.com/maps?q=Greenville,+SC&output=embed"
-              title="Greenville SC map"
+              title="Map of Greenville, South Carolina"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
           </div>
-        </div>
+        </section>
 
         <section className="contact-panel">
           <h2>Session Info</h2>

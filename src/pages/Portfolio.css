@@ -48,6 +48,26 @@
   color: #ffffff;
 }
 
+.portfolio-status {
+  margin: 18px 0 0;
+  min-height: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3657ac;
+}
+
+.portfolio-status.is-loading {
+  color: #3657ac;
+}
+
+.portfolio-status.is-success {
+  color: #1f6b43;
+}
+
+.portfolio-status.is-error {
+  color: #a11d1d;
+}
+
 .portfolio-grid {
   margin-top: 34px;
   display: grid;

@@ -131,6 +131,10 @@
   .brand-title span {
     font-size: 17px;
   }
+  .nav-toggle {
+    font-size: 14px;
+    padding: 7px 12px;
+  }
   .main-nav a {
     font-size: 15px;
   }

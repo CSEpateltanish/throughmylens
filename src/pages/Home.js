@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import GenreRow from '../components/GenreRow';
 
-var IMG_BASE = "https://raw.githubusercontent.com/CSEpateltanish/CSEpateltanish.github.io/e086ee4f0dc148596f488b2acc6944f351c89780/csce242/projects/part7/images/";
+var IMG_BASE = "https://csepateltanish.github.io/csce242/projects/part7/images/";
 
 var landscapeImages = [
   IMG_BASE + "photos/landscape/River_rocks.jpeg",
