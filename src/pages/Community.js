@@ -144,6 +144,18 @@ function Community() {
             <div className="type-note">
               <strong>Spot Types:</strong> Golden Hour, Urban, Nature, Indoor
             </div>
+
+            <div className="backend-link-box">
+              <p>Want to see interesting spots?</p>
+              <a
+                href="https://throughmylens-backend.onrender.com"
+                target="_blank"
+                rel="noreferrer"
+                className="backend-link"
+              >
+                Click to view others submissions
+              </a>
+            </div>
           </section>
 
           <section className="community-panel">

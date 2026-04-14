@@ -93,6 +93,32 @@
   line-height: 1.45;
 }
 
+.backend-link-box {
+  margin-top: 20px;
+  background: #eef2fa;
+  border-left: 4px solid var(--accent-amber);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.backend-link-box p {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin: 0 0 8px;
+}
+
+.backend-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--link-blue);
+  text-decoration: none;
+}
+
+.backend-link:hover {
+  color: var(--accent-amber);
+}
+
 .community-form {
   margin-top: 18px;
   display: grid;
