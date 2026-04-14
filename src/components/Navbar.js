@@ -33,6 +33,7 @@ function Navbar(props) {
         <a href="#home" className={props.currentPage === 'home' ? 'current-link' : ''} onClick={() => goToPage('home')}>Home</a>
         <a href="#portfolio" className={props.currentPage === 'portfolio' ? 'current-link' : ''} onClick={() => goToPage('portfolio')}>Portfolio</a>
         <a href="#about" className={props.currentPage === 'about' ? 'current-link' : ''} onClick={() => goToPage('about')}>About</a>
+        <a href="#community" className={props.currentPage === 'community' ? 'current-link' : ''} onClick={() => goToPage('community')}>Community</a>
         <a href="#contact" className={props.currentPage === 'contact' ? 'current-link' : ''} onClick={() => goToPage('contact')}>Contact</a>
       </div>
     </section>

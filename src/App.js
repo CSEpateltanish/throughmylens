@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Community from './pages/Community';
 import PhotoDetail from './pages/PhotoDetail';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       {currentPage === 'home' && <Home goTo={goTo} />}
       {currentPage === 'portfolio' && <Portfolio goTo={goTo} />}
       {currentPage === 'about' && <About />}
+      {currentPage === 'community' && <Community />}
       {currentPage === 'contact' && <Contact />}
       {currentPage === 'photo' && <PhotoDetail photo={selectedPhoto} goTo={goTo} />}
 
